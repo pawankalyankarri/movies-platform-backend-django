@@ -43,6 +43,7 @@ class ModifyMovie(APIView):
     def put(self,req,pk):
         movie = self.getMovie(pk)
         ser_obj = MovieSerializer(movie,data=req.data)
+        print(ser_obj)
         if ser_obj.is_valid():
             ser_obj.save()
             return Response(status=HTTP_200_OK)
