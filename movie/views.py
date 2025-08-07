@@ -19,6 +19,7 @@ class GetMovies(APIView):
             ser_obj.save()
             return Response(status=HTTP_201_CREATED)
         else:
+            print(ser_obj.errors)
             return Response(ser_obj.errors,status=HTTP_400_BAD_REQUEST)
         
         
